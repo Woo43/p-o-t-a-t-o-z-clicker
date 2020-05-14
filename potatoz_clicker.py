@@ -8,6 +8,11 @@ carrots = 0
 spotatoz = 0
 holypotato = 0
 def reset():
+    global clicks
+    global rutabagas
+    global carrots
+    global spotatoz
+    global holypotato
     clicks = 0
     rutabagas = 0
     carrots = 0
@@ -19,9 +24,12 @@ def clickplus():
     global clicks
     global rutabagas
     global carrots
+    global spotatoz
+    global holypotato
     clicks = clicks + 1 + rutabagas + carrots + carrots + carrots + spotatoz + spotatoz + spotatoz + spotatoz + spotatoz + spotatoz + spotatoz + spotatoz + spotatoz + spotatoz
-    clicker.title("You have " + str(clicks) + " potatoz.")
-    print("Your potatoz: " + str(clicks))
+    clicker.title("You have " + str(clicks) + " potatoz. and " + str(rutabagas) + " rutabagas and " + str(carrots) + " carrots and " + str(spotatoz) + " sweet potatoz.")
+    print("You have " + str(clicks) + " potatoz. and " + str(rutabagas) + " rutabagas and " + str(carrots) + " carrots and " + str(spotatoz) + " sweet potatoz.")
+#    print("Your potatoz: " + str(clicks))
     if clicks == 1:
         print("1 potato? If you think this is impressive, you have a long way to go.")
     if clicks == 10:
@@ -89,22 +97,21 @@ def openshop():
                 print("Cool. A red carrot.")
             clicks = clicks - 1000
             carrots = carrots + 1
-        carrotbuy = Button(shop, text="Buy 1 carrot for 1,000 potatoz", command=buycarrot)
-        carrotbuy.pack()
+    carrotbuy = Button(shop, text="Buy 1 carrot for 1,000 potatoz", command=buycarrot)
+    carrotbuy.pack()
     def buyspotato():
         global clicks
-        global rutabagas
-        global carrots
         global spotatoz
         if clicks - 2000 < 1:
             print("Sorry, you don't have enough potatoz.")
         else:
             clicks = clicks - 2000
             spotatoz = spotatoz + 1
+    spotatobuy = Button(shop, text="Buy 1 sweet potato for 2,000 potatoz.")
+    spotatobuy.pack()
     def buyholypotato():
         global clicks
         global holypotato
-        holypotatobuy = Button(shop, text="Buy the holy potato for 10000 potatoz.", command=buyholypotato)
         if clicks - 10000 < 1:
             print("Sorry, you don't have enough potatoz.")
         else:
@@ -114,6 +121,8 @@ def openshop():
                 clicks = clicks - 10000
                 holypotato = holypotato + 1
                 print("You got the holy potato!")
+    holypotatobuy = Button(shop, text="Buy the holy potato for 10000 potatoz.", command=buyholypotato)
+    holypotatobuy.pack()
 shopbutton = Button(clicker, text="Shop", command=openshop)
 shopbutton.pack()
 clicker.mainloop()
