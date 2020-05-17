@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+import time
 clicker = Tk()
 clicker.title("a very p o t a t o z clicker")
 clicks = 0
