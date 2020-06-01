@@ -19,6 +19,22 @@ def reset():
     carrots = 0
     spotatoz = 0
     holypotato = 0
+def openplant():
+    global clicks
+    global plantwindow
+    plantwindow = Toplevel()
+    plant = Button(plantwindow, text="Plant a Potato", command=plantpotatoz)
+    plant.pack()
+    plantwindow.title("Plant Potatoz Window")
+def plantpotatoz():
+    if clicks > 0:
+        clicks = clicks - 1
+        clicker.after(60)
+        clicks = clicks + 3
+        plantwindow.title("Plant Potatoz Window")
+    else:
+        print("You don't have enough potatoz!")
+        plantwindow.title("Plant Potatoz Window")
 def clickplus():
     global clicks
     global rutabagas
@@ -61,6 +77,8 @@ def clickplus():
         clicker.destroy()
 the_thing = Button(clicker, text="Generate Potatoz", command=clickplus)
 the_thing.pack()
+open_plant = Button(clicker, text="Open the Plant Potatoz Window", command=openplant)
+open_plant.pack()
 def openshop():
     shop = Toplevel()
     global clicks
