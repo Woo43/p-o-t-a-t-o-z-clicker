@@ -27,8 +27,9 @@ def openplant():
     plant.pack()
     plantwindow.title("Plant Potatoz Window")
 def plantpotatoz():
+    global clicks
     if clicks > 0:
-        clicks = clicks - 1
+        clicks -= 1
         clicker.after(60)
         clicks = clicks + 3
         plantwindow.title("Plant Potatoz Window")
