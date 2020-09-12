@@ -1,6 +1,6 @@
 from tkinter import *
-import random
-import time
+from random import *
+from time import *
 clicker = Tk()
 clicker.title("a very p o t a t o z clicker")
 clicks = 0
@@ -109,7 +109,7 @@ def openshop():
         if clicks - 1000 < 1:
             print("Sorry, you don't have enough potatoz.")
         else:
-            randcarrot = random.randint(1, 5)
+            randcarrot = randint(1, 5)
             if randcarrot == 1:
                 print("Cool. A carrot.")
             if randcarrot == 2:
