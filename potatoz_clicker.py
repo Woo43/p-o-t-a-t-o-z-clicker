@@ -31,7 +31,7 @@ def plantpotatoz():
     if clicks > 0:
         clicks -= 1
         clicker.after(60)
-        clicks = clicks + 3
+        clicks = clicks + 2
         plantwindow.title("Plant Potatoz Window")
     else:
         print("You don't have enough potatoz!")
